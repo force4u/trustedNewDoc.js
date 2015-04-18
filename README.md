@@ -1,0 +1,2 @@
+# trustedNewDoc
+AdobeAcrobatPro用のアドオンメニューツールJavaScripts
