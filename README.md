@@ -1,4 +1,11 @@
 # trustedNewDoc  
+
+詳しくは　こちら↓
+
+https://force4u.cocolog-nifty.com/skywalker/2021/01/post-71d7cc.html
+
+
+
 AdobeAcrobatPro用のアドオンメニューツールJavaScripts  
 //newDoc.js 20141227  
 //http://force4u.cocolog-nifty.com/  
