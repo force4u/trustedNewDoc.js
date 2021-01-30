@@ -1,8 +1,9 @@
-//newDoc.js 20141227
+//newDoc.js 20141227　更新20210123版
 //http://force4u.cocolog-nifty.com/
 /*
 Public Domain
 href="http://creativecommons.org/publicdomain/zero/1.0/
+自由に改変再配布等行ってください。
 */
 
 /*
@@ -12,6 +13,8 @@ href="http://creativecommons.org/publicdomain/zero/1.0/
 USサイズとノビ版を追加
 20150419
 720pサイズを追加
+20210123
+SRA版を追加
 */
 
 /*
@@ -104,7 +107,7 @@ app.addMenuItem({ cName: "A2-Bleed-R",cUser:"A2-Bleed横", cParent: "CreateBlank
 app.addMenuItem({ cName: "A1-Bleed-R",cUser:"A1-Bleed横", cParent: "CreateBlankDocumentISOA", cExec: "trustedNewDoc(2401,1701);"});
 app.addMenuItem({ cName: "OversizeA0-R",cUser:"A0-Oversize横", cParent: "CreateBlankDocumentISOA", cExec: "trustedNewDoc(3529,2551);"});
 
-app.addSubMenu({ cName: "CreateBlankDocumentJISB", cUser:"JIS-B",cParent: "CreateBlankDocument", nPos: 1 });
+app.addSubMenu({ cName: "CreateBlankDocumentJISB", cUser:"JIS-B",cParent: "CreateBlankDocument", nPos:1});
 
 app.addMenuItem({ cName: "B6",cUser:"B6JIS縦", cParent: "CreateBlankDocumentJISB", cExec: "trustedNewDoc(363,516);"});
 app.addMenuItem({ cName: "B5",cUser:"B5JIS縦", cParent: "CreateBlankDocumentJISB", cExec: "trustedNewDoc(516,729);"});
@@ -138,7 +141,11 @@ app.addMenuItem({ cName: "B4-Bleed-R",cUser:"B4JIS-Bleed-R横", cParent: "Create
 app.addMenuItem({ cName: "B3-Bleed-R",cUser:"B3JIS-Bleed-R横", cParent: "CreateBlankDocumentJISB", cExec: "trustedNewDoc(1477,1049);"});
 app.addMenuItem({ cName: "B2-Bleed-R",cUser:"B2JIS-Bleed-R横", cParent: "CreateBlankDocumentJISB", cExec: "trustedNewDoc(2081,1477);"});
 
-app.addSubMenu({ cName: "CreateBlankDocumentUS", cUser:"US",cParent: "CreateBlankDocument", nPos: 2 });
+
+app.addMenuItem({ cName: "BarUS",cUser:"-", cParent: "CreateBlankDocument", cExec: "",cEnable: "event.rc = (false);", nPos:2});
+
+
+app.addSubMenu({ cName: "CreateBlankDocumentUS", cUser:"US",cParent: "CreateBlankDocument", nPos:3});
 
 app.addMenuItem({ cName: "HalfLetter",cUser:"HalfLetter縦5.5×8.5", cParent: "CreateBlankDocumentUS", cExec: "trustedNewDoc(396,612);"});
 
@@ -170,7 +177,7 @@ app.addMenuItem({ cName: "Letter-Bleed-R",cUser:"Letter-Bleed-R横", cParent: "C
 app.addMenuItem({ cName: "Legal-Bleed-R",cUser:"Legal-Bleed-R横", cParent: "CreateBlankDocumentUS", cExec: "trustedNewDoc(1026,630);"});
 app.addMenuItem({ cName: "Tabloid-Bleed-R",cUser:"Tabloid-Bleed-R横", cParent: "CreateBlankDocumentUS", cExec: "trustedNewDoc(1242,810);"});
 
-app.addSubMenu({ cName: "CreateBlankDocumentANSI", cUser:"ANSI",cParent: "CreateBlankDocument", nPos: 3 });
+app.addSubMenu({ cName: "CreateBlankDocumentANSI", cUser:"ANSI",cParent: "CreateBlankDocument", nPos:4 });
 
 app.addMenuItem({ cName: "ANSI A",cUser:"ANSI A縦8.5×11", cParent: "CreateBlankDocumentANSI", cExec: "trustedNewDoc(612,792);"});
 app.addMenuItem({ cName: "ANSI B",cUser:"ANSI B縦11×17", cParent: "CreateBlankDocumentANSI", cExec: "trustedNewDoc(792,1224);"});
@@ -180,7 +187,7 @@ app.addMenuItem({ cName: "ANSI E",cUser:"ANSI E縦34×44", cParent: "CreateBlank
 app.addMenuItem({ cName: "ANSI F",cUser:"ANSI F縦28×40", cParent: "CreateBlankDocumentANSI", cExec: "trustedNewDoc(2016,2880);"});
 app.addMenuItem({ cName: "ANSI SuperB",cUser:"ANSI SuperB縦13×19", cParent: "CreateBlankDocumentANSI", cExec: "trustedNewDoc(936,1368);"});
 
-app.addSubMenu({ cName: "CreateBlankDocumentARCH", cUser:"ARCH",cParent: "CreateBlankDocument", nPos: 4 });
+app.addSubMenu({ cName: "CreateBlankDocumentARCH", cUser:"ARCH",cParent: "CreateBlankDocument", nPos:5});
 
 app.addMenuItem({ cName: "ARCH A",cUser:"ARCH A縦9×12", cParent: "CreateBlankDocumentARCH", cExec: "trustedNewDoc(648,864);"});
 app.addMenuItem({ cName: "ARCH B",cUser:"ARCH B縦12×18", cParent: "CreateBlankDocumentARCH", cExec: "trustedNewDoc(864,1296);"});
@@ -191,7 +198,9 @@ app.addMenuItem({ cName: "ARCH E1",cUser:"ARCH E1縦30×42", cParent: "CreateBla
 app.addMenuItem({ cName: "ARCH E2",cUser:"ARCH E2縦26×38", cParent: "CreateBlankDocumentARCH", cExec: "trustedNewDoc(1872,2736);"});
 app.addMenuItem({ cName: "ARCH E3",cUser:"ARCH E3縦27×39", cParent: "CreateBlankDocumentARCH", cExec: "trustedNewDoc(1944,2808);"});
 
-app.addSubMenu({ cName: "CreateBlankDocumentCH", cUser:"CH",cParent: "CreateBlankDocument", nPos: 5 });
+app.addMenuItem({ cName: "Bar",cUser:"-", cParent: "CreateBlankDocument", cExec: "",cEnable: "event.rc = (false);", nPos:6});
+
+app.addSubMenu({ cName: "CreateBlankDocumentCH", cUser:"CH",cParent: "CreateBlankDocument", nPos:7 });
 
 app.addMenuItem({ cName: "16Kai",cUser:"16Kai縦", cParent: "CreateBlankDocumentCH", cExec: "trustedNewDoc(553,757);"});
 app.addMenuItem({ cName: "8Kai",cUser:"8Kai縦", cParent: "CreateBlankDocumentCH", cExec: "trustedNewDoc(757,1106);"});
@@ -201,6 +210,26 @@ app.addMenuItem({ cName: "BarCH",cUser:"-", cParent: "CreateBlankDocumentCH", cE
 app.addMenuItem({ cName: "16Kai-R",cUser:"16Kai-R横", cParent: "CreateBlankDocumentCH", cExec: "trustedNewDoc(757,553);"});
 app.addMenuItem({ cName: "8Kai-R",cUser:"8Kai-R横", cParent: "CreateBlankDocumentCH", cExec: "trustedNewDoc(1106,757);"});
 
+app.addMenuItem({ cName: "BarKtoSRA",cUser:"-", cParent: "CreateBlankDocument", cExec: "",cEnable: "event.rc = (false);"});
+
+app.addSubMenu({ cName: "CreateBlankDocumentSRA", cUser:"SRA",cParent: "CreateBlankDocument", nPos:8 });
+
+app.addMenuItem({ cName: "SRA0m",cUser:"SRA0縦", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(2552,3629);"});
+app.addMenuItem({ cName: "SRA1m",cUser:"SRA1縦", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(1814,2552);"});
+app.addMenuItem({ cName: "SRA2m",cUser:"SRA2縦", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(1276,1814);"});
+app.addMenuItem({ cName: "SRA3m",cUser:"SRA3縦", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(907,1276);"});
+app.addMenuItem({ cName: "SRA4m",cUser:"SRA4縦", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(638,907);"});
+
+app.addMenuItem({ cName: "BarSRA",cUser:"-", cParent: "CreateBlankDocumentSRA", cExec: "",cEnable: "event.rc = (false);"});
+
+app.addMenuItem({ cName: "SRA0Rm",cUser:"SRA0横", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(3629,2552);"});
+app.addMenuItem({ cName: "SRA1Rm",cUser:"SRA1横", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(2552,1814);"});
+app.addMenuItem({ cName: "SRA2Rm",cUser:"SRA2横", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(1814,1276);"});
+app.addMenuItem({ cName: "SRA3Rm",cUser:"SRA3横", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(1276,907);"});
+app.addMenuItem({ cName: "SRA4Rm",cUser:"SRA4横", cParent: "CreateBlankDocumentSRA", cExec: "trustedNewDoc(907,638);"});
+
+
+
 app.addMenuItem({ cName: "Bar",cUser:"-", cParent: "CreateBlankDocument", cExec: "",cEnable: "event.rc = (false);"});
 
 app.addMenuItem({ cName: "NP1",cUser:"ブランケットNP406×545", cParent: "CreateBlankDocument", cExec: "trustedNewDoc(1151,1545);"});
@@ -208,9 +237,21 @@ app.addMenuItem({ cName: "NP2",cUser:"タブロイドNP273×406", cParent: "Crea
 app.addMenuItem({ cName: "NP3",cUser:"菊半NP469×636", cParent: "CreateBlankDocument", cExec: "trustedNewDoc(1406,1803);"});
 app.addMenuItem({ cName: "NP4",cUser:"菊四NP318×469", cParent: "CreateBlankDocument", cExec: "trustedNewDoc(902,1406);"});
 
+
+
 app.addMenuItem({ cName: "Bar",cUser:"-", cParent: "CreateBlankDocument", cExec: "",cEnable: "event.rc = (false);"});
 
 app.addMenuItem({ cName: "HD720",cUser:"720p 1280x720", cParent: "CreateBlankDocument", cExec: "trustedNewDoc(1280,720);"});
+
+app.addMenuItem({ cName: "FHD1K",cUser:"1080p 1920x1080", cParent: "CreateBlankDocument", cExec: "trustedNewDoc(1920,1080);"});
+
+app.addMenuItem({ cName: "QHD2K",cUser:"1440p 2560×1440", cParent: "CreateBlankDocument", cExec: "trustedNewDoc(2560,1440);"});
+
+app.addMenuItem({ cName: "UHD4K",cUser:"2160p 4096×2160", cParent: "CreateBlankDocument", cExec: "trustedNewDoc(4096,12160);"});
+
+
+
+
 
 app.addMenuItem({ cName: "Bar2",cUser:"-", cParent: "CreateBlankDocument", cExec: "",cEnable: "event.rc = (false);"});
 
